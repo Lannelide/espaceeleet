@@ -4,13 +4,17 @@
 
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
- <!--lien page desktop-->
+  <!--lien page desktop-->
     <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" /> 
     <!--lien page nonAMP-->  
     <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
- <!--lien page AMP à ajouter sur page non AMP--> 
- 	<link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
- <!--inclut et charge la bibliothèque AMP JS-->
+  <!--lien page AMP à ajouter sur page non AMP--> 
+ 	  <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
+  <!--Inclut et charge la bibliothèque MENU SIDEBAR AMP JS-->  
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <!--inclut et charge la blibliothèque CAROUSEL AMP JS-->
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <!--inclut et charge la bibliothèque AMP JS-->
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -44,11 +48,68 @@
   </head>
   
   <body>
-    <h1>Welcome to the mobile web</h1>
-    <!--code ajout d'image-->
-    <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
-    
-    
-    
+    <section id="global">
+      <div id="firstpage">
+        <header>
+            <!--typo-->
+          <amp-img src="image/eleetGold1_resize.png" alt="typographie eleet"></amp-img>
+            <!--logo-->
+          <amp-img src="image/eleet_size.png" alt="logo eleet"></amp-img>
+            <!--menu SIDEBAR-->
+          <amp-sidebar id="sidebar"
+              layout="nodisplay"
+              side="right">
+            <amp-img class="amp-close-image"
+            src="/img/ic_close_black_18dp_2x.png"
+            width="20"
+            height="20"
+            alt="close sidebar"
+            on="tap:sidebar.close"
+            role="button"
+            tabindex="0"></amp-img>
+            <ul>
+              <li><a href="education.html">Education</a></li>
+              <li><a href="environnement.html">Environnement</a></li>
+              <li><a href="leadership.html">Leadership</a></li>
+              <li><a href="actualite.html">Actus</a></li>
+              <li><a href="formulaire.html">Nous rejoindre</a></li>
+              <li><a href="contact.html">Nous Contactez</a></li>
+            </ul>  
+          </amp-sidebar>
+          <!--button toggle sidebar amp-->
+          <button on="tap:sidebar.toggle"
+          class="ampstart-btn caps m2">&#9776;</button>
+        </header>
+
+        <!--carousel-->
+        <amp-carousel 
+          width="480"
+          height="800"
+          layout="responsive"
+          type="slides">
+              <amp-img src="image/slide1.png"
+              width="400"
+              height="300"
+              layout="responsive"
+              alt="image éducation"></amp-img>
+              <amp-img src="image/slide2.png"
+              width="400"
+              height="300"
+              layout="responsive"
+              alt="image environnement"></amp-img>
+              <amp-img src="image/slide3.png"
+              width="400"
+              height="300"
+              layout="responsive"
+              alt="image leadership"></amp-img>
+              <amp-img src="image/slide4.png"
+              width="400"
+              height="300"
+              layout="responsive"
+              alt="image formulaire"></amp-img>
+        </amp-carousel>
+      
+
+    </section>
   </body>
 </html>
